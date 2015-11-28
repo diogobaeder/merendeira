@@ -1,3 +1,4 @@
+# pragma: no cover
 
 from __future__ import absolute_import, unicode_literals
 import os
@@ -311,7 +312,7 @@ if os.path.exists(f):
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
-    '--config=nose.cfg',
+    '--config=setup.cfg',
 ]
 
 ####################
