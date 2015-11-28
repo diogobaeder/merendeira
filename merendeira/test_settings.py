@@ -1,4 +1,4 @@
-from .settings import *
+from .settings import *  # noqa
 
 DATABASES = {
     "default": {
@@ -20,4 +20,3 @@ DATABASES = {
 SECRET_KEY = 'cb66301fe1734a81b3ea8b57c7c9ba82dc1216cfcd4aa693d31ac698b93214bc'
 
 TEMPLATE_DEBUG = True
-
