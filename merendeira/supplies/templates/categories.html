@@ -1,0 +1,16 @@
+{% extends "pages/page.html" %}
+
+{% load mezzanine_tags %}
+
+{% block meta_title %}Categorias{% endblock %}
+{% block title %}Categorias{% endblock %}
+
+{% block main %}
+
+<ul class="categories">
+{% for category in categories %}
+<li><a href="{{ category.url }}" title="{{ category.title }}">{{ category.title }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

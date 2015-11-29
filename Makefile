@@ -15,3 +15,12 @@ freeze:
 
 install:
 	pip install -r requirements.txt
+
+migrations:
+	DJANGO_SETTINGS_MODULE=merendeira.test_settings python manage.py makemigrations
+
+syncdb:
+	python manage.py syncdb
+
+run:
+	python manage.py runserver

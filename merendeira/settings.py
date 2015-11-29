@@ -18,12 +18,30 @@ from django.utils.translation import ugettext_lazy as _
 
 # Controls the ordering and grouping of the admin menu.
 #
-# ADMIN_MENU_ORDER = (
-#     ("Content", ("pages.Page", "blog.BlogPost",
-#        "generic.ThreadedComment", (_("Media Library"), "fb_browse"),)),
-#     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting")),
-#     ("Users", ("auth.User", "auth.Group",)),
-# )
+ADMIN_MENU_ORDER = (
+    ("Content", (
+        "pages.Page",
+        "blog.BlogPost",
+        "generic.ThreadedComment",
+        (_("Media Library"), "fb_browse"),
+        )
+     ),
+    ("Supplies", (
+        "merendeira.supplies.Category",
+        )
+     ),
+    ("Site", (
+        "sites.Site",
+        "redirects.Redirect",
+        "conf.Setting",
+        )
+     ),
+    ("Users", (
+        "auth.User",
+        "auth.Group",
+        )
+     ),
+)
 
 # A three item sequence, each containing a sequence of template tags
 # used to render the admin dashboard.
@@ -226,6 +244,8 @@ INSTALLED_APPS = (
     # "mezzanine.mobile",
 
     'django_nose',
+
+    'merendeira.supplies',
 )
 
 # List of processors used by RequestContext to populate the context.
