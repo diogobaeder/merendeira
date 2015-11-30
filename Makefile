@@ -1,14 +1,14 @@
-build: test lint
+build: cover-test lint
 
 test:
 	DJANGO_SETTINGS_MODULE=merendeira.test_settings python manage.py test
 
+cover-test:
+	DJANGO_SETTINGS_MODULE=merendeira.test_settings coverage run manage.py test
+	coverage report -m
+
 lint:
 	flake8 merendeira
-
-testing:
-	export PYTHONPATH=$PWD/merendeira/
-	export DJANGO_SETTINGS_MODULE=merendeira.test_settings
 
 freeze:
 	pip freeze > requirements.txt
