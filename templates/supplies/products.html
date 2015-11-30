@@ -1,0 +1,16 @@
+{% extends "pages/page.html" %}
+
+{% load mezzanine_tags %}
+
+{% block meta_title %}Produtos{% endblock %}
+{% block title %}Produtos{% endblock %}
+
+{% block main %}
+
+<ul class="products">
+{% for product in products %}
+<li><a href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

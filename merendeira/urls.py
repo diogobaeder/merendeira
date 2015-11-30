@@ -31,7 +31,7 @@ urlpatterns += patterns(
     '',
 
     # Merendeira
-    url('^mantimentos', include('merendeira.supplies.urls')),
+    url('^mantimentos/', include('merendeira.supplies.urls')),
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.

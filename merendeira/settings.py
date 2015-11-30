@@ -28,6 +28,7 @@ ADMIN_MENU_ORDER = (
      ),
     ("Supplies", (
         "merendeira.supplies.Category",
+        "merendeira.supplies.Product",
         )
      ),
     ("Site", (

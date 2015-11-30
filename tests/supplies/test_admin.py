@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.test import TestCase
 from nose.tools import istest
 
-from merendeira.supplies.models import Category
+from merendeira.supplies.models import Category, Product
 
 
 class AdminTestCase(TestCase):
@@ -23,3 +23,17 @@ class CategoryAdminTest(AdminTestCase):
         response = self.client.get('/admin/supplies/category/')
 
         self.assertContains(response, category.title)
+
+
+class ProductAdminTest(AdminTestCase):
+    def create_category(self):
+        return Category.objects.create(title='Comidas')
+
+    @istest
+    def is_listed_in_admin(self):
+        product = Product.objects.create(
+            title='Tomate', category=self.create_category())
+
+        response = self.client.get('/admin/supplies/product/')
+
+        self.assertContains(response, product.title)
